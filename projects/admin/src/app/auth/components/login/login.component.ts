@@ -15,7 +15,8 @@ export class LoginComponent implements OnInit {
   storedTheme=localStorage.getItem('theme-color')
   hide = true;
   lang:any
-  loginForm!: FormGroup
+  loginForm!: FormGroup;
+  staticEmail:string="admin@admin.com"
   constructor(private fb: FormBuilder,
     private service: LoginService,
     private toaster: ToastrService,
