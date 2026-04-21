@@ -1,0 +1,26 @@
+
+<div class="content-theme {{storedTheme}}">
+  <div class="row mt-5">
+    <div class="col-xl-3 col-md-6 mb-5" *ngFor="let task of allTasks;let index=index">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>{{task.title}}</mat-card-title>
+          <mat-card-subtitle>{{task.deadline}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="'https://crudapp-a3y5.onrender.com/'+ task.image"alt="">
+        <mat-card-content>
+          <p>Dsscription: <span>  {{task.description | slice:0:12}}...</span></p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button class="details" routerLink="/tasks/{{task._id}}">Details</button>
+          <button mat-raised-button color="primary" (click)="complete(index)">complete task</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+
+
+</div>
+
+
+

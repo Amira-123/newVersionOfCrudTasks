@@ -1,0 +1,137 @@
+@mixin tableStyle {
+  display:block;
+  width:100%;
+}
+
+table {
+  width: 100%;
+  tr{
+    text-align: initial;
+  }
+  .mat-header-cell {
+    background: #C62232;
+    color:aliceblue;
+    font-size: 15px;
+    font-weight: 500;
+  }
+}
+
+// theme
+.content-theme.theme-red{
+  table{
+    .mat-header-cell {
+      background: #C62232;
+
+    }
+    td{
+      &::before{
+        color: #C62232;
+      }
+    }
+  }
+  .my-pagination ::ng-deep .ngx-pagination .current {
+    background-color: #C62232;
+  }
+}
+
+
+.content-theme.theme-green{
+  table{
+    .mat-header-cell {
+      background: #208637;
+
+    }
+    td{
+      &::before{
+        color: #208637;
+      }
+    }
+  }
+  .my-pagination ::ng-deep .ngx-pagination .current {
+      background-color: #208637;
+  }
+}
+.content-theme.theme-blue{
+  table{
+    .mat-header-cell {
+      background: #025BDF;
+    }
+    td{
+      &::before{
+        color: #025BDF;
+      }
+    }
+  }
+  .my-pagination ::ng-deep .ngx-pagination .current {
+    background-color: #025BDF;
+  }
+}
+.content-theme.theme-purple{
+  table{
+    .mat-header-cell {
+      background: purple;
+
+    }
+    td{
+      &::before{
+        color: purple;
+      }
+    }
+  }
+  .my-pagination ::ng-deep .ngx-pagination .current {
+    background-color: purple;
+  }
+}
+.content-theme.theme-orange{
+  table{
+    .mat-header-cell {
+      background: #E76B03;
+
+    }
+    td{
+      &::before{
+        color: #E76B03;
+      }
+    }
+  }
+  .my-pagination ::ng-deep .ngx-pagination .current {
+    background-color: #E76B03;
+  }
+}
+
+
+
+// responsive table
+@media (max-width:900px){
+  .mat-table .mat-cell:last-child {
+    border-bottom: 0;
+  }
+  .mat-table .mat-cell:first-child {
+    margin-top: 5%;
+
+  }
+    table {
+      th{
+        display: none;
+      }
+      .mat-cell{
+        padding-left: 4rem;
+      }
+        position: relative;
+      td{
+        @include tableStyle;
+        margin-bottom: 13px;
+        &::before{
+          content:attr(data-label);
+          position:absolute;
+          left:3px;
+          width:50%;
+          font-weight:600;
+          font-size:14px;
+        }
+      }
+    }
+
+
+}
+

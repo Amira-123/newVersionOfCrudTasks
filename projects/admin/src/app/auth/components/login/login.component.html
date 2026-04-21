@@ -1,0 +1,54 @@
+<div class="box d-flex content-theme {{storedTheme}}">
+  <div class="image-section w-50">
+    <div class="layer d-flex flex-column justify-content-center ps-5 text-white ">
+      <h2>{{'login.imageText'| translate}}</h2>
+      <p>{{'login.imagepara'| translate}}</p>
+
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="d-flex justify-content-between position-relative">
+      <h1>{{'login.login'| translate}}</h1>
+    </div>
+
+    <form  [formGroup]="loginForm" (ngSubmit)="Login()">
+      <label> {{'login.email'| translate}}</label>
+      <mat-form-field class="w-100" appearance="outline">
+        <input matInput required  formControlName="email"/>
+        <mat-error *ngIf="email?.errors?.['required']">{{'login.emailreq'| translate}} </mat-error>
+        <mat-error *ngIf="email?.errors?.['email']">{{'login.emailvalid'| translate}} </mat-error>
+      </mat-form-field>
+
+      <label>{{'login.password'| translate}}</label>
+      <mat-form-field class="w-100" appearance="outline">
+        <input matInput  formControlName="password"[type]="hide ? 'password' : 'text'"
+         />
+         <mat-error *ngIf="password?.errors?.['required']"> {{'login.passwordreq'| translate}}</mat-error>
+
+        <button type="button"
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+      </mat-form-field>
+      <div class="w-100 mt-2 mb-2">
+        <button  class="w-100 py-1" mat-raised-button type="submit"
+         [disabled]="loginForm.invalid" [ngClass]="{'validStyle' : loginForm.valid}">
+         {{'buttons.login'| translate}}</button>
+      </div>
+    </form>
+    <div class="d-flex justify-content-end mt-2 main">
+      <div class="hint rounded-1 p-1 me-5">
+        <p class="text-white">{{'login.email'| translate}}<span>admin@admin.com</span></p>
+        <p class="text-white">{{'login.password'| translate}}<span> 123</span></p>
+      </div>
+
+   </div>
+  </div>
+
+</div>

@@ -1,0 +1,210 @@
+.box{
+  .image-section{
+    height: 100vh;
+    background-image: url(../../../../assets/image/login-bg.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    position: relative;
+    .layer{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      h2{
+        font-size: 3rem;
+        line-height: 1.2;
+        font-family: "Poppins", sans-serif;
+      }
+      p{
+        font-size: 20px;
+        color:#fff;
+      }
+    }
+  }
+
+  .content{
+    width:50%;
+    padding: 6rem 3rem;
+    label{
+      margin-bottom: .5rem;
+      color: #4c4d4d;
+      font-size: 16px;
+    }
+    h1{
+      font-size: 1.7rem;
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.2;
+      font-weight: 600;
+      padding: 0 2rem;
+    }
+    form{
+      padding: 1rem 2rem;
+    }
+    .validStyle{
+      cursor: pointer;
+      transition: all .5s;
+      color:#fff;
+      font-size: 18px;
+      font-family: 'Poppins', sans-serif;
+    }
+    .register{
+      p{
+        font-size: 18px;
+        color: #6c757d;
+        line-height: 1.8;
+        a{
+          cursor: pointer;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
+  padding:.8em !important;
+
+}
+////////////////theme
+.theme{
+  top:0%;
+  right: 2%;
+  z-index: 99999;
+}
+ .box.theme-red{
+  .image-section{
+    .layer{
+      background-color: rgba($color: #C62232, $alpha: .6);
+    }
+
+  }
+  .content{
+    h1{
+      color: #C62232;
+    }
+    .validStyle{
+      background-color: #dc3545;
+      &:hover{
+        background-color: #C62232;
+      }
+    }
+    p{
+      a{
+        color: #C62232;
+      }
+    }
+  }
+
+ }
+
+  .box.theme-blue{
+    .image-section{
+      .layer{
+        background-color: rgba($color: #007BFF, $alpha: .6);
+      }
+    }
+    .content{
+      h1{
+        color: #007BFF;
+      }
+      .validStyle{
+        background-color: #007BFF;
+        &:hover{
+          background-color: #0d6efd;
+        }
+      }
+      p{
+        a{
+          color: #0d6efd;
+        }
+      }
+    }
+  }
+  .box.theme-green{
+    .image-section{
+      .layer{
+        background-color: rgba($color: #28A745, $alpha: .6);
+      }
+    }
+    .content{
+      h1{
+        color: green;
+      }
+      .validStyle{
+        background-color: #28A745;
+        &:hover{
+          background-color: #208637;
+        }
+      }
+      p{
+        a{
+          color: #208637;
+        }
+      }
+    }
+  }
+
+  .box.theme-purple{
+    .image-section{
+      .layer{
+        background-color: rgba($color: purple, $alpha: .6);
+      }
+    }
+    .content{
+      h1{
+        color: purple;
+      }
+      .validStyle{
+        background-color: purple;
+        &:hover{
+          background-color: purple;
+        }
+      }
+      p{
+        a{
+          color: purple;
+        }
+      }
+    }
+  }
+
+  .box.theme-orange{
+    .image-section{
+      .layer{
+        background-color: rgba($color: #FD7E14, $alpha: .6);
+      }
+    }
+    .content{
+      h1{
+        color: #E66A02;
+      }
+      .validStyle{
+        background-color: #FD7E14;
+        &:hover{
+          background-color: #E66A02;
+        }
+      }
+      p{
+        a{
+          color: #E66A02;
+        }
+      }
+    }
+  }
+
+@media (max-width:768px){
+  .box{
+    .image-section{
+      display: none;
+    }
+    .content{
+      width: 98%;
+      margin: auto;
+    }
+  }
+
+}

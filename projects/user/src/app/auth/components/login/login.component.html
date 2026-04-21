@@ -1,0 +1,51 @@
+
+ <div class="box d-flex content-theme {{storedTheme}}">
+  <div class="image-section w-50">
+    <div class="layer d-flex flex-column justify-content-center px-5 text-white ">
+      <h2>Welcome back!</h2>
+      <p>We are glad to see you again! Get access to your Account,
+         Wish  you to the Best.
+      </p>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="d-flex justify-content-between position-relative">
+      <h1>Log In</h1>
+    </div>
+
+    <form  [formGroup]="loginForm" (ngSubmit)="login()">
+      <label> Email Address</label>
+      <mat-form-field class="w-100" appearance="outline">
+        <input matInput required  formControlName="email"type="email" />
+        <mat-error *ngIf="email?.errors?.['required']">  must enter your email** </mat-error>
+        <mat-error *ngIf="email?.errors?.['email']">must enter valid Email** </mat-error>
+      </mat-form-field>
+
+      <label>Password</label>
+      <mat-form-field class="w-100" appearance="outline">
+        <input matInput  formControlName="password"[type]="hide ? 'password' : 'text'"
+         />
+         <mat-error *ngIf="password?.errors?.['required']">password is required**</mat-error>
+        <button type="button"
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+      </mat-form-field>
+      <div class="w-100 mt-2 mb-2">
+        <button  class="w-100 py-1" mat-raised-button type="submit"
+         [disabled]="loginForm.invalid" [ngClass]="{'validStyle' : loginForm.valid}">Login</button>
+      </div>
+    </form>
+    <div class="text-center register">
+      <p>Don't have an account ? <a routerLink="/auth/register">SignUp</a>
+      </p>
+    </div>
+  </div>
+</div>
+

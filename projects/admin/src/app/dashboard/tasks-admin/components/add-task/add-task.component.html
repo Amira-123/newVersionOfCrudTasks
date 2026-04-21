@@ -1,0 +1,74 @@
+
+<div class="content-theme {{storedTheme}}">
+  <header class="d-flex justify-content-between justify-content-center">
+    <h1 *ngIf="!data">{{'tasks.Add Task'| translate}}</h1>
+    <h1 *ngIf="data">{{'tasks.updatetask'| translate}}</h1>
+    <button mat-flat-button (click)="checkChanges()" class="text-danger">
+      <mat-icon>close</mat-icon>
+    </button>
+  </header>
+
+  <form [formGroup]="newTaskForm"(ngSubmit)="AddTask()">
+    <div class="row mt-3">
+      <div class="col-md-12">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>{{'tasks.title' | translate}}</mat-label>
+          <input type="text" matInput placeholder="{{'tasks.title' | translate}}" formControlName="title">
+          <mat-error *ngIf="title?.errors?.['required']">{{'addtask.titlereq'|translate}}</mat-error>
+          <mat-error *ngIf="title?.errors?.['minlength']">{{'addtask.titlevalid'|translate}}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-md-12">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>{{'tasks.byuser'| translate}}</mat-label>
+          <mat-select formControlName="userId">
+            <mat-option *ngFor="let user of users" [value]="user?.id">
+              {{user?.name}}
+            </mat-option>
+           </mat-select>
+           <mat-error *ngIf="userId?.errors?.['required']">{{'addtask.userreq'|translate}}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-md-12 mb-3">
+        <label for="select" class="btn btn-primary">{{'addtask.selectImage'|translate}}</label>
+        <span>{{fileName}}</span>
+        <input type="file" class="form-control" id="select"hidden (change)="selectFile($event)">
+        <mat-error *ngIf="image?.errors?.['required']">{{'addtask.imagereq'|translate}}</mat-error>
+      </div>
+      <div class="col-md-12">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>{{'tasks.date' | translate}}</mat-label>
+          <input matInput [matDatepicker]="picker"placeholder="{{'tasks.title' | translate}}">
+          <mat-error *ngIf="deadline?.errors?.['required']">{{'addtask.deadlinereq'|translate}} </mat-error>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-12">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>{{'addtask.description'|translate}}</mat-label>
+          <textarea matInput placeholder="{{'addtask.description'|translate}}" formControlName="description">
+          </textarea>
+          <mat-error *ngIf="description?.errors?.['required']">{{'addtask.descriptionReq'|translate}}</mat-error>
+         </mat-form-field>
+      </div>
+
+
+    </div>
+
+  <footer class="d-flex justify-content-center">
+    <button  *ngIf="!data" mat-raised-button  class="px-5 mx-2 " type="submit"
+     [disabled]="newTaskForm.invalid" [ngClass]="{'validStyle' : newTaskForm.valid}"
+     >{{'addtask.create'|translate}}
+    </button>
+    <button *ngIf="data" mat-raised-button  class="px-5 mx-2" type="submit"
+      [disabled]="newTaskForm.invalid" [ngClass]="{'validStyle' : newTaskForm.valid}"
+      >{{'addtask.update'|translate}}
+    </button>
+    <button mat-raised-button color="warn" class="px-5" (click)="checkChanges()"
+     type="button">{{'addtask.close'|translate}}</button>
+  </footer>
+</form>
+</div>
+

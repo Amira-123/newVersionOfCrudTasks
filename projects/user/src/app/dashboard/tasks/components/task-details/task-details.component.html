@@ -1,0 +1,20 @@
+<div class="content-theme {{storedTheme}}">
+  <div class="row">
+    <div class="pt-5 col-md-6">
+      <mat-card class="example-card ">
+
+        <img mat-card-image [src]="'https://crudapp-a3y5.onrender.com/'+taskDetails?.image"alt="">
+        <mat-card-header>
+          <mat-card-title>{{taskDetails?.title}}</mat-card-title>
+          <mat-card-subtitle>{{taskDetails?.deadline}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Dsscription: <span> {{taskDetails?.description}}</span></p>
+        </mat-card-content>
+        <mat-card-actions>
+        <button mat-raised-button class="complete"(click)="complete(taskDetails._id)">complete task</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

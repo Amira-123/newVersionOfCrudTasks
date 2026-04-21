@@ -1,0 +1,14 @@
+{
+  "login":
+  {
+    "login":"Log In",
+    "email":"Email Address",
+    "password":"Password",
+    "imageText":"Welcome back!",
+    "imagepara":"We are glad to see you again! Get access to your Account,Wish you to do the Best."
+  },
+  "general":
+  {
+    "loading":"loading"
+  }
+}

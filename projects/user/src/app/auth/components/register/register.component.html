@@ -1,0 +1,69 @@
+<div class="box d-flex content-theme {{storedTheme}}">
+  <div class="image-section w-50">
+    <div class="layer d-flex flex-column justify-content-center px-5 text-white ">
+      <h2>Looks like you're new here!</h2>
+      <p>Join our group in few minutes! Sign up with your account to get
+         started
+      </p>
+    </div>
+  </div>
+  <div class="content">
+    <div class="d-flex justify-content-between position-relative">
+      <h1>SignUp</h1>
+    </div>
+    <form  [formGroup]="registerForm" (ngSubmit)="register()">
+      <label> User Name</label>
+      <mat-form-field class="w-100" appearance="outline">
+        <input matInput required formControlName="username" />
+        <mat-error *ngIf="username?.errors?.['required']"> username is requird** </mat-error>
+
+      </mat-form-field>
+      <!------------ Email ------------->
+      <label> Email Address</label>
+      <mat-form-field class="w-100 " appearance="outline">
+        <input matInput required  formControlName="email"/>
+        <mat-error *ngIf="email?.errors?.['required']">  email is required** </mat-error>
+        <mat-error *ngIf="email?.errors?.['email']">must enter valid Email** </mat-error>
+      </mat-form-field>
+      <!------------ password ------------->
+      <label>Password</label>
+      <mat-form-field class="w-100" appearance="outline">
+        <input matInput  formControlName="password"[type]="hide ? 'password' : 'text'"/>
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide">
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+         </button>
+         <mat-error *ngIf="password?.errors?.['required']">  must enter your password** </mat-error>
+      </mat-form-field>
+       <!------------ password ------------->
+      <label>Confirm Password</label>
+      <mat-form-field class="w-100" appearance="outline">
+      <input matInput formControlName="confirmPassword" [type]="hide ? 'password' : 'text'"/>
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide">
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+        <mat-error *ngIf="confirmPassword?.errors?.['required']"> confirm password is requird** </mat-error>
+        <mat-hint *ngIf="registerForm.hasError('notmatch')"> must match password</mat-hint>
+      </mat-form-field>
+      <div class="w-100 mt-2 mb-2">
+        <button  class="w-100 py-1" mat-raised-button type="submit"
+         [disabled]="registerForm.invalid" [ngClass]="{'validStyle' : registerForm.valid}">signup</button>
+      </div>
+    </form>
+    <div class="text-center register">
+      <p>Already have an account ? <a routerLink="/auth/">login</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+

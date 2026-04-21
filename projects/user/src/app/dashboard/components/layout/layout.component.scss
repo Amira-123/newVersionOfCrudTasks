@@ -1,0 +1,49 @@
+.navbar{
+
+    li{
+      margin: 0px 5px;
+      a{
+        font-size: 16px;
+      }
+    }
+    a{
+      color: #fff;
+
+    }
+}
+// theme
+.content.theme-green{
+  .navbar{
+    background-color: green;
+  }
+
+}
+.content.theme-red{
+  .navbar{
+    background-color: #C62232;
+  }
+
+}
+.content.theme-blue{
+  .navbar{
+    background-color: #025BDF;
+  }
+
+}
+.content.theme-purple{
+  .navbar{
+    background-color:purple;
+  }
+
+}
+.content.theme-orange{
+  .navbar{
+    background-color:#E76B03;
+  }
+}
+.content.theme-green{
+  .navbar{
+    background-color:#208637;
+  }
+}
+

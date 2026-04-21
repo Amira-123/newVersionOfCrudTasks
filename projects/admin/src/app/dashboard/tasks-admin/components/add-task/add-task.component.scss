@@ -1,0 +1,60 @@
+.validStyle{
+  color: #fff;
+}
+//theme
+.content-theme.theme-red{
+  h1{
+   color:#C62232
+  }
+  .validStyle{
+    background-color: #dc3545;
+    &:hover{
+      background-color: #C62232;
+    }
+  }
+}
+.content-theme.theme-orange{
+  h1{
+    color:#E76B03;
+  }
+  .validStyle{
+    background-color: #E76B03;
+    &:hover{
+      background-color: #E76B03;
+    }
+  }
+}
+.content-theme.theme-blue{
+  h1{
+    color:#025BDF;
+  }
+  .validStyle{
+    background-color: #025BDF;
+    &:hover{
+      background-color: #025BDF;
+    }
+  }
+}
+.content-theme.theme-green{
+  h1{
+    color:#208637;
+  }
+  .validStyle{
+    background-color: #208637;
+    &:hover{
+      background-color: #208637;
+    }
+  }
+}
+.content-theme.theme-purple{
+  h1{
+    color:purple;
+
+  }
+  .validStyle{
+    background-color: purple;
+    &:hover{
+      background-color: purple;
+    }
+  }
+}
