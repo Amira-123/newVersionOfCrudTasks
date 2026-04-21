@@ -3,7 +3,7 @@ import { SharedService } from './../../../../shared/services/shared.service';
 import { ToastrService } from 'ngx-toastr';
 import { Component, OnInit } from '@angular/core';
 import { TasksService } from '../../services/tasks.service';
-import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog, MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA, MatLegacyDialogRef as MatDialogRef } from '@angular/material/legacy-dialog';
 import { AddTaskComponent } from '../add-task/add-task.component';
 import * as moment from 'moment';
 export interface PeriodicElement {
