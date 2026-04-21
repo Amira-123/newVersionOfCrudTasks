@@ -1,12 +1,12 @@
 import { ToastrService } from 'ngx-toastr';
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { ActivatedRouteSnapshot, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class LoginGuard implements CanActivate {
+export class LoginGuard  {
   constructor(private route:Router,
     private toaster:ToastrService){}
   canActivate(
