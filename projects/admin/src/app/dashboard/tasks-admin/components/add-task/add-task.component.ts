@@ -4,10 +4,10 @@ import { ToastrService } from 'ngx-toastr';
 import { TasksService } from './../../services/tasks.service';
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import  * as moment from 'moment';
-import { MatLegacyDialog as MatDialog, MatLegacyDialogRef as MatDialogRef, MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA } from '@angular/material/legacy-dialog';
+import moment from 'moment';
 import { ConfirmationComponent } from '../confirmation/confirmation.component';
 import { UsersService } from '../../../manage-users/services/users.service';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 
 
@@ -78,7 +78,6 @@ export class AddTaskComponent implements OnInit {
     },(error)=>{
       this.toaster.error(error.error.message)
     })
-    console.log(this.newTaskForm)
   }
 
   preparedFormData(){
@@ -106,6 +105,7 @@ export class AddTaskComponent implements OnInit {
   }
 
   AddTask(){
+    let newDate= moment(this.newTaskForm.value['deadline']).format('DD-MM-YYYY');
     if(!this.data){
       this.createTask()
     }
@@ -114,6 +114,7 @@ export class AddTaskComponent implements OnInit {
     }
   }
   checkChanges(){
+    debugger;
     let hasChanges=false
     Object.keys(this.formsValueChange).forEach((item)=>{
       if(this.formsValueChange[item] !== this.newTaskForm.value[item]){

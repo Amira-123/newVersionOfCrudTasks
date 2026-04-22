@@ -23,7 +23,6 @@ export class TranslateComponent implements OnInit {
   }
   changeLanguage(event:any){
     let value=event.target.innerText
-    console.log(event.target.innerText)
 
     // if(this.lang=="en"){
     //   localStorage.setItem("lang","ar")

@@ -50,7 +50,6 @@ export class RegisterComponent implements OnInit {
       this.toaster.success('success','register successfully');
       this.route.navigate(['/'])
     })
-   console.log(this.registerForm.value)
   }
   get username(){
     return this.registerForm.get('username')

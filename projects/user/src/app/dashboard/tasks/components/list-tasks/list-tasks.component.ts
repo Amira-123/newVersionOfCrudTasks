@@ -28,7 +28,6 @@ export class ListTasksComponent implements OnInit {
   getuserData(){
     let token=JSON.stringify(localStorage.getItem('token'));
     this.userData= JSON.parse(window.atob(token.split('.')[1])) ;
-    console.log(this.userData.userId)
   }
   getAllTasks(){
     let model={
@@ -44,7 +43,6 @@ export class ListTasksComponent implements OnInit {
     })
   }
   complete(index:any){
-    console.log(this.allTasks[index]._id);
     const model={
       id:this.allTasks[index]._id
     }

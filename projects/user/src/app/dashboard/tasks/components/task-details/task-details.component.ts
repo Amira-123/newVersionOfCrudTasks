@@ -19,7 +19,6 @@ export class TaskDetailsComponent implements OnInit {
     private toaster:ToastrService,
     private route:Router) {
       this.id=this.activatedRoute.snapshot.params['id'];
-      console.log(this.id)
     }
 
   ngOnInit(): void {

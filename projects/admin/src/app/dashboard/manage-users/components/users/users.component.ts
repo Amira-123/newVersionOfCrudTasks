@@ -44,7 +44,6 @@ export class UsersComponent implements OnInit {
 
   getDataFromSubject(){
     this.service.userData?.subscribe((res:any)=>{
-      console.log(res)
       this.dataSource=res?.data
       this.total=res?.totalItem
     })

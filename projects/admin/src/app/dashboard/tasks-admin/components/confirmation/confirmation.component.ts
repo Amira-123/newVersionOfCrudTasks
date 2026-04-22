@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatLegacyDialog as MatDialog, MatLegacyDialogRef as MatDialogRef } from '@angular/material/legacy-dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-confirmation',
@@ -8,8 +8,8 @@ import { MatLegacyDialog as MatDialog, MatLegacyDialogRef as MatDialogRef } from
 })
 export class ConfirmationComponent implements OnInit {
 
-  constructor(public matDialog:MatDialog,
-    public dialog:MatDialogRef<ConfirmationComponent>) { }
+  constructor(public matDialog: MatDialog,
+    public dialog: MatDialogRef<ConfirmationComponent>) { }
 
   ngOnInit(): void {
   }

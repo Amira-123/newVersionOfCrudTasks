@@ -15,16 +15,23 @@
     <form  [formGroup]="loginForm" (ngSubmit)="Login()">
       <label> {{'login.email'| translate}}</label>
       <mat-form-field class="w-100" appearance="outline">
-        <input matInput required  formControlName="email"/>
-        <mat-error *ngIf="email?.errors?.['required']">{{'login.emailreq'| translate}} </mat-error>
-        <mat-error *ngIf="email?.errors?.['email']">{{'login.emailvalid'| translate}} </mat-error>
+        <input matInput formControlName="email"/>
       </mat-form-field>
+         <!-- built in validation -->
+        @if(email?.touched&&email?.invalid){
+            @if(email?.errors?.['required']){
+              <mat-error>{{'login.emailreq'| translate}} </mat-error>
+            }
+            @if(email?.errors?.['email']){
+              <mat-error>{{'login.emailvalid'| translate}} </mat-error>                    
+            }
+        }
+    
 
       <label>{{'login.password'| translate}}</label>
       <mat-form-field class="w-100" appearance="outline">
         <input matInput  formControlName="password"[type]="hide ? 'password' : 'text'"
          />
-         <mat-error *ngIf="password?.errors?.['required']"> {{'login.passwordreq'| translate}}</mat-error>
 
         <button type="button"
           mat-icon-button
@@ -36,6 +43,17 @@
           <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
         </button>
       </mat-form-field>
+        @if(password?.touched&&password?.invalid){
+            @if(password?.errors?.['required']){
+              <mat-error> {{'login.passwordreq'| translate}}</mat-error> 
+            }
+             @if(password?.errors?.['minlength']){
+              <mat-error>{{'login.pass-min-length' | translate}}</mat-error>
+             }
+             @if(password?.errors?.['maxlength']){
+              <mat-error>{{'login.pass-max-length' | translate}}</mat-error>
+             }
+        }
       <div class="w-100 mt-2 mb-2">
         <button  class="w-100 py-1" mat-raised-button type="submit"
          [disabled]="loginForm.invalid" [ngClass]="{'validStyle' : loginForm.valid}">

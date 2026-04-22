@@ -1,5 +1,5 @@
 
-<div class="content-theme {{storedTheme}}">
+<div class="content-theme {{storedTheme}}  m-3 container" >
   <header class="d-flex justify-content-between justify-content-center">
     <h1 *ngIf="!data">{{'tasks.Add Task'| translate}}</h1>
     <h1 *ngIf="data">{{'tasks.updatetask'| translate}}</h1>
@@ -14,9 +14,17 @@
         <mat-form-field appearance="outline" class="w-100">
           <mat-label>{{'tasks.title' | translate}}</mat-label>
           <input type="text" matInput placeholder="{{'tasks.title' | translate}}" formControlName="title">
-          <mat-error *ngIf="title?.errors?.['required']">{{'addtask.titlereq'|translate}}</mat-error>
-          <mat-error *ngIf="title?.errors?.['minlength']">{{'addtask.titlevalid'|translate}}</mat-error>
+        
         </mat-form-field>
+        <!-- built in validation -->
+                @if(title?.touched&&title?.invalid){
+                    @if(title?.errors?.['required']){
+                     <mat-error>{{'addtask.titlereq'|translate}}</mat-error>
+                    }
+                    @if(title?.errors?.['minlength']){
+                      <mat-error>{{'addtask.titlevalid'|translate}}</mat-error>
+                    }
+                }
       </div>
       <div class="col-md-12">
         <mat-form-field appearance="outline" class="w-100">
@@ -38,11 +46,12 @@
       <div class="col-md-12">
         <mat-form-field appearance="outline" class="w-100">
           <mat-label>{{'tasks.date' | translate}}</mat-label>
-          <input matInput [matDatepicker]="picker"placeholder="{{'tasks.title' | translate}}">
+          <input matInput [matDatepicker]="picker"placeholder="{{'tasks.title' | translate}}" formControlName="deadline">
           <mat-error *ngIf="deadline?.errors?.['required']">{{'addtask.deadlinereq'|translate}} </mat-error>
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
+        
       </div>
 
       <div class="col-md-12">
@@ -57,9 +66,10 @@
 
     </div>
 
+    <!-- [disabled]="newTaskForm.invalid" -->
   <footer class="d-flex justify-content-center">
     <button  *ngIf="!data" mat-raised-button  class="px-5 mx-2 " type="submit"
-     [disabled]="newTaskForm.invalid" [ngClass]="{'validStyle' : newTaskForm.valid}"
+      [ngClass]="{'validStyle' : newTaskForm.valid}"
      >{{'addtask.create'|translate}}
     </button>
     <button *ngIf="data" mat-raised-button  class="px-5 mx-2" type="submit"
