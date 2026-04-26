@@ -4,10 +4,11 @@ import { ToastrService } from 'ngx-toastr';
 import { TasksService } from './../../services/tasks.service';
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import moment from 'moment';
 import { ConfirmationComponent } from '../confirmation/confirmation.component';
 import { UsersService } from '../../../manage-users/services/users.service';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
+import moment from 'moment';
+
 
 
 
@@ -85,7 +86,8 @@ export class AddTaskComponent implements OnInit {
     let formData =new FormData();
     Object.entries(this.newTaskForm.value).forEach(([key,value]:any)=>{
       if(key=='deadline'){
-        formData.append(key,newDate)
+         formData.append(key,newDate)
+
       }else{
         formData.append(key,value)
       }
@@ -114,7 +116,6 @@ export class AddTaskComponent implements OnInit {
     }
   }
   checkChanges(){
-    debugger;
     let hasChanges=false
     Object.keys(this.formsValueChange).forEach((item)=>{
       if(this.formsValueChange[item] !== this.newTaskForm.value[item]){
@@ -156,3 +157,4 @@ export class AddTaskComponent implements OnInit {
   }
 
 }
+

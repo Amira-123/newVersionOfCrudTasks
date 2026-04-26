@@ -7,12 +7,12 @@
           <mat-card-title>{{task.title}}</mat-card-title>
           <mat-card-subtitle>{{task.deadline}}</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image [src]="'https://crudapp-a3y5.onrender.com/'+ task.image"alt="">
+        <img mat-card-image [src]="'https://backend-crud-master-new.vercel.app/'+ task.image"alt="">
         <mat-card-content>
           <p>Dsscription: <span>  {{task.description | slice:0:12}}...</span></p>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-raised-button class="details" routerLink="/tasks/{{task._id}}">Details</button>
+          <button mat-raised-button class="details mx-2" routerLink="/tasks/{{task._id}}">Details</button>
           <button mat-raised-button color="primary" (click)="complete(index)">complete task</button>
         </mat-card-actions>
       </mat-card>

@@ -1,4 +1,3 @@
-import { AppModule } from './../../../../user/src/app/app.module';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from './../material/material/material.module';
 import { NgModule } from '@angular/core';

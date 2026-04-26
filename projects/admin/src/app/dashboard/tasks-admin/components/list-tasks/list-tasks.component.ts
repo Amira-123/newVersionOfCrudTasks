@@ -4,8 +4,8 @@ import { ToastrService } from 'ngx-toastr';
 import { Component, OnInit } from '@angular/core';
 import { TasksService } from '../../services/tasks.service';
 import { AddTaskComponent } from '../add-task/add-task.component';
-import moment from 'moment';
 import { MatDialog } from '@angular/material/dialog';
+import moment from 'moment';
 export interface PeriodicElement {
   position:number;
   title: string;
@@ -159,3 +159,4 @@ export class ListTasksComponent implements OnInit {
 
 
 }
+
