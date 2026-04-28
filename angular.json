@@ -23,6 +23,7 @@
             "polyfills": "projects/user/src/polyfills.ts",
             "tsConfig": "projects/user/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
+            "allowedCommonJsDependencies": ["moment"],
             "assets": [
               "projects/user/src/favicon.ico",
               "projects/user/src/assets"
@@ -88,6 +89,7 @@
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "buildTarget": "user:build"
+            
           }
         },
         "test": {
@@ -98,6 +100,7 @@
             "tsConfig": "projects/user/tsconfig.spec.json",
             "karmaConfig": "projects/user/karma.conf.js",
             "inlineStyleLanguage": "scss",
+            "allowedCommonJsDependencies": ["moment"],
             "assets": [
               "projects/user/src/favicon.ico",
               "projects/user/src/assets"
@@ -136,6 +139,7 @@
             "polyfills": "projects/admin/src/polyfills.ts",
             "tsConfig": "projects/admin/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
+            "allowedCommonJsDependencies": ["moment"],
             "assets": [
               "projects/admin/src/favicon.ico",
               "projects/admin/src/assets"
@@ -221,6 +225,7 @@
             "tsConfig": "projects/admin/tsconfig.spec.json",
             "karmaConfig": "projects/admin/karma.conf.js",
             "inlineStyleLanguage": "scss",
+            "allowedCommonJsDependencies": ["moment"],
             "assets": [
               "projects/admin/src/favicon.ico",
               "projects/admin/src/assets"
