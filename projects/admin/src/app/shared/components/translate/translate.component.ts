@@ -2,9 +2,10 @@ import { SharedService } from '../../services/shared.service';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-translate',
-  templateUrl: './translate.component.html',
-  styleUrls: ['./translate.component.scss']
+    selector: 'app-translate',
+    templateUrl: './translate.component.html',
+    styleUrls: ['./translate.component.scss'],
+    standalone: false
 })
 export class TranslateComponent implements OnInit {
   @Output() selectedlang:EventEmitter <string> =new EventEmitter

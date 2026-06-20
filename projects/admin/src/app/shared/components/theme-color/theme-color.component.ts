@@ -2,9 +2,10 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { SharedService } from '../../services/shared.service';
 
 @Component({
-  selector: 'app-theme-color',
-  templateUrl: './theme-color.component.html',
-  styleUrls: ['./theme-color.component.scss']
+    selector: 'app-theme-color',
+    templateUrl: './theme-color.component.html',
+    styleUrls: ['./theme-color.component.scss'],
+    standalone: false
 })
 export class ThemeColorComponent implements OnInit {
   // storedTheme=localStorage.getItem('theme-color')

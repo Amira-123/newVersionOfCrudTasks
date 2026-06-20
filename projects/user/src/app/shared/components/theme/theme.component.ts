@@ -2,9 +2,10 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { SharedService } from '../../services/shared.service';
 
 @Component({
-  selector: 'app-theme',
-  templateUrl: './theme.component.html',
-  styleUrls: ['./theme.component.scss']
+    selector: 'app-theme',
+    templateUrl: './theme.component.html',
+    styleUrls: ['./theme.component.scss'],
+    standalone: false
 })
 export class ThemeComponent implements OnInit {
   storedTheme:any=''

@@ -5,9 +5,10 @@ import { Component, OnInit } from '@angular/core';
 import { TasksService } from '../../services/tasks.service';
 
 @Component({
-  selector: 'app-task-details',
-  templateUrl: './task-details.component.html',
-  styleUrls: ['./task-details.component.scss']
+    selector: 'app-task-details',
+    templateUrl: './task-details.component.html',
+    styleUrls: ['./task-details.component.scss'],
+    standalone: false
 })
 export class TaskDetailsComponent implements OnInit {
   taskDetails:any;

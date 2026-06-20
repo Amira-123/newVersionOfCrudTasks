@@ -3,9 +3,10 @@ import { TranslateService } from '@ngx-translate/core';
 import { SharedService } from './shared/services/shared.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    standalone: false
 })
 export class AppComponent {
   title = 'user';

@@ -15,12 +15,15 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/user",
+            "outputPath": {
+              "base": "dist/user"
+            },
             "index": "projects/user/src/index.html",
-            "main": "projects/user/src/main.ts",
-            "polyfills": "projects/user/src/polyfills.ts",
+            "polyfills": [
+              "projects/user/src/polyfills.ts"
+            ],
             "tsConfig": "projects/user/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "allowedCommonJsDependencies": ["moment"],
@@ -38,7 +41,8 @@
             ],
             "scripts": [
               "./node_modules/bootstrap/dist/js/bootstrap.min.js"
-            ]
+            ],
+            "browser": "projects/user/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -63,9 +67,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -131,12 +133,15 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/admin",
+            "outputPath": {
+              "base": "dist/admin"
+            },
             "index": "projects/admin/src/index.html",
-            "main": "projects/admin/src/main.ts",
-            "polyfills": "projects/admin/src/polyfills.ts",
+            "polyfills": [
+              "projects/admin/src/polyfills.ts"
+            ],
             "tsConfig": "projects/admin/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "allowedCommonJsDependencies": ["moment"],
@@ -164,7 +169,8 @@
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
-            ]
+            ],
+            "browser": "projects/admin/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -189,9 +195,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true

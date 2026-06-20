@@ -5,9 +5,10 @@ import { TasksService } from './../../services/tasks.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-list-tasks',
-  templateUrl: './list-tasks.component.html',
-  styleUrls: ['./list-tasks.component.scss']
+    selector: 'app-list-tasks',
+    templateUrl: './list-tasks.component.html',
+    styleUrls: ['./list-tasks.component.scss'],
+    standalone: false
 })
 export class ListTasksComponent implements OnInit {
   storedTheme=localStorage.getItem('theme-color')

@@ -13,9 +13,10 @@ import moment from 'moment';
 
 
 @Component({
-  selector: 'app-add-task',
-  templateUrl: './add-task.component.html',
-  styleUrls: ['./add-task.component.scss']
+    selector: 'app-add-task',
+    templateUrl: './add-task.component.html',
+    styleUrls: ['./add-task.component.scss'],
+    standalone: false
 })
 export class AddTaskComponent implements OnInit {
   storedTheme=localStorage.getItem('theme-color')
