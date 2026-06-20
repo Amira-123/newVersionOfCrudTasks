@@ -9,17 +9,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { SharedModule } from '../shared/shared.module';
 
-
-@NgModule({ declarations: [
-        LoginComponent
-    ],
-    exports: [
-        LoginComponent
-    ], imports: [CommonModule,
-        AuthRoutingModule,
-        MaterialModule,
-        RouterModule,
-        FormsModule,
-        ReactiveFormsModule,
-        SharedModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
+@NgModule({
+  declarations: [LoginComponent],
+  exports: [LoginComponent],
+  imports: [
+    CommonModule,
+    AuthRoutingModule,
+    MaterialModule,
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
+    SharedModule
+  ],
+  providers: [provideHttpClient(withInterceptorsFromDi())]
+})
 export class AuthModule { }

@@ -6,7 +6,13 @@ import { SharedService } from '../../../shared/services/shared.service';
 import { LoginService } from '../../services/login.service';
 
 
-const loginComponentBase = class LoginComponent implements OnInit {
+@Component({
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.scss'],
+    standalone: false
+})
+export class LoginComponent implements OnInit {
   storedTheme = localStorage.getItem('theme-color');
   hide = true;
   lang: any;
@@ -56,11 +62,6 @@ const loginComponentBase = class LoginComponent implements OnInit {
 
 };
 
-export const LoginComponent = Component({
-    selector: 'app-login',
-    templateUrl: './login.component.html',
-    styleUrls: ['./login.component.scss'],
-    standalone: false
-})(loginComponentBase);
+
 
 
