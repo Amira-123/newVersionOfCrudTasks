@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -12,27 +12,21 @@ import { SharedModule } from '../../shared/shared.module';
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 
 
-@NgModule({
-  declarations: [
-    AddTaskComponent,
-    ListTasksComponent,
-    ConfirmationComponent
-  ],
-  imports: [
-    CommonModule,
-    TasksAdminRoutingModule,
-    RouterModule,
-    HttpClientModule,
-    MaterialModule,
-    FormsModule,
-    ReactiveFormsModule,
-    NgxPaginationModule,
-    SharedModule
-  ],
-  exports:[
-    ListTasksComponent,
-    AddTaskComponent,
-    ConfirmationComponent
-  ]
-})
+@NgModule({ declarations: [
+        AddTaskComponent,
+        ListTasksComponent,
+        ConfirmationComponent
+    ],
+    exports: [
+        ListTasksComponent,
+        AddTaskComponent,
+        ConfirmationComponent
+    ], imports: [CommonModule,
+        TasksAdminRoutingModule,
+        RouterModule,
+        MaterialModule,
+        FormsModule,
+        ReactiveFormsModule,
+        NgxPaginationModule,
+        SharedModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class TasksAdminModule { }
