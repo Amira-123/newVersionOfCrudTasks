@@ -1,7 +1,7 @@
 import { SharedService } from './shared/services/shared.service';
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, DOCUMENT } from '@angular/core';
 import {TranslateService} from "@ngx-translate/core";
-import { DOCUMENT } from '@angular/common';
+
 
 @Component({
     selector: 'app-root',
