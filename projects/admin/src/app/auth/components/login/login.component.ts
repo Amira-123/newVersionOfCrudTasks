@@ -6,23 +6,17 @@ import { SharedService } from '../../../shared/services/shared.service';
 import { LoginService } from '../../services/login.service';
 
 
-@Component({
-    selector: 'app-login',
-    templateUrl: './login.component.html',
-    styleUrls: ['./login.component.scss'],
-    standalone: false
-})
-export class LoginComponent implements OnInit {
-  storedTheme=localStorage.getItem('theme-color')
+const loginComponentBase = class LoginComponent implements OnInit {
+  storedTheme = localStorage.getItem('theme-color');
   hide = true;
-  lang:any
+  lang: any;
   loginForm!: FormGroup;
-  staticEmail:string="admin@admin.com"
+  staticEmail: string = "admin@admin.com";
   constructor(private fb: FormBuilder,
     private service: LoginService,
     private toaster: ToastrService,
     private route: Router,
-    private sharedService:SharedService)
+    private sharedService: SharedService)
      { }
 
   ngOnInit(): void {
@@ -60,5 +54,13 @@ export class LoginComponent implements OnInit {
     })
   }
 
-}
+};
+
+export const LoginComponent = Component({
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.scss'],
+    standalone: false
+})(loginComponentBase);
+
 
