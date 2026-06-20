@@ -9,7 +9,7 @@
         </mat-card-header>
         <img mat-card-image [src]="'https://backend-crud-master-new.vercel.app/'+ task.image"alt="">
         <mat-card-content>
-          <p>Dsscription: <span>  {{task.description | slice:0:12}}...</span></p>
+          <p>Description: <span>  {{task.description | slice:0:12}}...</span></p>
         </mat-card-content>
         <mat-card-actions>
           <button mat-raised-button class="details mx-2" routerLink="/tasks/{{task._id}}">Details</button>
